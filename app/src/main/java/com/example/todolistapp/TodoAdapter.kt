@@ -13,7 +13,7 @@ class TodoAdapter(private val todoList: MutableList<Todo>) :
     inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val taskTitle: TextView = itemView.findViewById(R.id.taskTitle)
         val priorityText: TextView = itemView.findViewById(R.id.priorityTextView)
-        val checkBox: CheckBox = itemView.findViewById(androidx.appcompat.R.id.checkbox)
+//        val checkBox: CheckBox = itemView.findViewById(androidx.appcompat.R.id.checkbox)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
@@ -26,11 +26,11 @@ class TodoAdapter(private val todoList: MutableList<Todo>) :
         val currentItem = todoList[position]
         holder.taskTitle.text = currentItem.taskName
         holder.priorityText.text = currentItem.priority
-        holder.checkBox.text = currentItem.isChecked.toString()
+//        holder.checkBox.text = currentItem.isChecked.toString()
 
-        holder.checkBox.setOnCheckedChangeListener{ _, isChecked ->
-            currentItem.isChecked = isChecked
-        }
+//        holder.checkBox.setOnCheckedChangeListener{ _, isChecked ->
+//            currentItem.isChecked = isChecked
+//        }
     }
 
     override fun getItemCount() = todoList.size
